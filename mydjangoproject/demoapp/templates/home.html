@@ -1,0 +1,92 @@
+<html>
+<head>
+<style>
+		body
+		{
+			background: url("https://goo.gl/AW5Yzp");
+			background-size: cover;	
+		}
+		#upload
+		{
+			float:left;
+			height:50px;
+			width:180px;
+		}
+		#logout
+		{
+			float:right;
+			height:50px;
+			width:180px;
+		}
+		#Like
+		{
+			height:30px;
+			width:60px;
+		}
+		#caption
+		{
+			text-color:red;
+			font-size:20px;
+		}
+		img
+		{
+			height:500px;
+			width:500px;
+		}
+</style>
+</head>
+
+<body>
+
+	<a href="/post.">   <input id = "upload" type = "submit" value = "UPLOAD POST"></a>
+	<a href="/logout/"> <input id = "logout" type = "submit" value = "Logout"></a>
+
+<div align=center>
+		
+	{% for post in posts %}
+	
+	<br>
+	<br>
+	<br>
+	<hr>
+	
+	<h1>Posted by : {{ post.user.username}}</h1>
+	
+	<img src="{{ post.image_url}}">
+	
+	<div id ="caption">
+		Caption: {{ post.caption }}
+		</br>
+	</div>
+
+	<form action = "/like/" method="POST">
+		{% csrf_token %}
+		<input type="hidden" name="post" value="{{ post.id }}">
+		{% if post.has_liked %}
+		<input type="submit" value="Unlike">
+		{% else %}
+		</br>
+		<input id= "Like" type="submit" value="Like">
+		{% endif %}
+	</form>
+	
+	<h4> Likes : {{ post.check_likes }}</h4>
+	
+	<form method="POST" action="/comment/">
+                {% csrf_token %}
+                <input type="hidden" name="post" value="{{ post.id }}" />
+                <input type="text" name="comment_text" id="comment_text" placeholder="Make a comment.." value="{{ comment_text }}">
+                {{ comment_text }}
+                <input type="submit" value="Comment">
+     </form>
+	
+			{% for comment in post.comments %}
+			 <p><b>{{ comment.user.username }} [{{ comment.created_on }}]</b> ({{ comment.comment_text }})</p>
+			 {% endfor %}
+		
+{% endfor %}
+	
+</div>
+
+</body>
+</html>

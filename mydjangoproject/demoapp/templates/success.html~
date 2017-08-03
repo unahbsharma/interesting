@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>
+		Demo
+	</title>
+	</head>
+	<body>
+	<h1> User registeration succesful. Go for Login</h1>
+	<a href="/login">Login</a>
+	</body>
+</html>

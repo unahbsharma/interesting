@@ -1,0 +1,14 @@
+<html>
+
+<body>
+	
+	<form action = "" method ="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	Image  <input type="file" name="image"    value = "{{ image }}"></br></br>
+	Caption<input type="text" name="caption" value="{{ caption }}"></br></br>
+		   <input type="submit" name="submit" class="btn btn-default" value="POST">
+	</form>
+	
+</body>
+
+</html>

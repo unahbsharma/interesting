@@ -1,0 +1,57 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		
+		<title>Instagram</title>
+
+		<meta charset="utf-8">
+   		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1">	
+
+		<!--Custom css file-->
+		<link rel="stylesheet" type="text/css" href="style.css" >
+		
+		<!--Bootstrap File-->
+		<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+
+	</head>
+	
+	<body>
+	<h1 align = center>Instagram Clone</h1>
+	
+	<div align =center>
+	<form action ="" method ="get">
+	{% csrf_token %}
+	<table>	
+	<tr>
+		<td>Username</td>
+		<td> <input type="text" name="username" placeholder="username" value="{{ username }}"> </td>
+	</tr>
+	<tr>
+		<td>Password </td>
+		<td> <input type="password" name="password" placeholder="password" value="{{ password }}"> </td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" value="Login"/>
+			<input type="reset"  value="Reset">
+		</td>	
+	</tr>
+	</table>	
+	
+	</form>
+	</div>
+	
+	
+	<div id="footer">
+		<h3> Copyright &copy InstagramClone</h3>
+	</div>
+	
+	
+		<!--javascript files-->
+		<!--jquery library-->
+		<script src="js/jquery-3.2.1.js"></script>
+		<!--bootstrap javascript-->
+		<script src="js/bootstrap.js"></script>
+	</body>
+
