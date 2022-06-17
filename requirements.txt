@@ -9,7 +9,7 @@ gTTS-token==1.1.1
 idna==2.5
 matplotlib==2.0.2
 nltk==3.2.4
-numpy==1.13.1
+numpy==1.21.0
 olefile==0.44
 Pillow==4.2.1
 pyparsing==2.2.0
